@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    </head>
+    <body>
+      <br>
+        <form action="http://localhost:3000" id="searchForm" method="post">
+            <textarea type="text" name="love" placeholder="Search..." rows=10 cols=80 id="inp1" ></textarea>
+            <input type="submit" value="tag"  style="width:100px; height:100px;" />
+        </form>
+        <!-- the result of the search will be rendered inside this div -->
+        <div id="result"></div>
+        <br>
+        <script>
+              console.log('begin');
+              var http = new XMLHttpRequest();
+              var params = "text=fuckshit321b0";
+              http.open("POST", "http://localhost:3000", true);
+
+              http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+              //http.setRequestHeader("Content-length", params.length);
+              //http.setRequestHeader("Connection", "close");
+
+              http.onreadystatechange = function() {
+                  console.log('onreadystatechange');
+                  if (http.readyState == 4 && http.status == 200) {
+                      //alert(http.responseText);
+                  }
+                  else {
+                      console.log('readyState=' + http.readyState + ', status: ' + http.status);
+                  }
+              }
+
+              console.log('sending...')
+              http.send(params);
+              console.log('end');
+        </script>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    </head>
+    <body>
+        <form action="https://jj2r6rtht8.execute-api.us-west-2.amazonaws.com/prod/ner_hunt" id="searchForm" method="POST">
+            <input type="text" name="love" placeholder="Search..." id="inp1" />
+            <input type="submit" value="tag" />
+        </form>
+        <!-- the result of the search will be rendered inside this div -->
+        <div id="result"></div>
+        <script>
+            /* attach a submit handler to the form */
+            $("#searchForm").submit(function(event) {
+
+                /* stop form from submitting normally */
+                event.preventDefault();
+
+                /* get some values from elements on the page: */
+                var $form = $(this),
+                    term = $form.find('input[name="love"]').val(),
+                    url = $form.attr('action');
+
+
+            });
+        </script>
+    </body>
+</html>

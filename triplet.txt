@@ -1,0 +1,1 @@
+[["live", "->", "We"], ["all", "mod", "live"], ["submarine", "->", "live"], ["yellow", "mod", "submarine"], ["want", "->", "we"], ["really", "mod", "want"], ["want", "->", "to"]]
